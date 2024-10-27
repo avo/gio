@@ -10,42 +10,39 @@ import { baseStyle } from './styles/Base';
 import { elementStyle } from './styles/Element';
 import { themeStyle } from './styles/Theme';
 
-const router = createBrowserRouter(
-  [
-    {
-      children: [
-        {
-          element: <About />,
-          index: true,
-        },
-        {
-          element: <About />,
-          path: '/about',
-        },
-        {
-          element: <AboutSite />,
-          path: '/about/site',
-        },
-        {
-          element: <Newness />,
-          path: '/blog',
-        },
-        {
-          element: <Error />,
-          path: '/error',
-        },
-        {
-          element: <Unknown />,
-          path: '*',
-        },
-      ],
-      element: <Root />,
-      errorElement: <Error />,
-      path: '/',
-    },
-  ],
-  { basename: import.meta.env.DEV ? '/' : '/' }
-);
+const router = createBrowserRouter([
+  {
+    children: [
+      {
+        element: <About />,
+        index: true,
+      },
+      {
+        element: <About />,
+        path: '/about',
+      },
+      {
+        element: <AboutSite />,
+        path: '/about/site',
+      },
+      {
+        element: <Newness />,
+        path: '/blog',
+      },
+      {
+        element: <Error />,
+        path: '/error',
+      },
+      {
+        element: <Unknown />,
+        path: '*',
+      },
+    ],
+    element: <Root />,
+    errorElement: <Error />,
+    path: '/',
+  },
+]);
 
 function App() {
   return (
