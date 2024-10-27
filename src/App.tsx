@@ -39,7 +39,7 @@ const router = createBrowserRouter(
       path: '/',
     },
   ],
-  { basename: import.meta.env.DEV ? '/' : '/gio/' }
+  { basename: import.meta.env.DEV ? '/' : '/' }
 );
 
 function App() {
