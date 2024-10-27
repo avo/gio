@@ -46,7 +46,7 @@ function App() {
   return (
     <>
       <Global styles={[baseStyle, themeStyle, elementStyle]} />
-      <RouterProvider router={router} />;
+      <RouterProvider router={router} />
     </>
   );
 }
