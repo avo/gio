@@ -1,6 +1,7 @@
 import { Global } from '@emotion/react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { About } from './routes/About';
+import { AboutSite } from './routes/AboutSite';
 import { Error } from './routes/Error';
 import { Newness } from './routes/New';
 import { Root } from './routes/Root';
@@ -20,6 +21,10 @@ const router = createBrowserRouter(
         {
           element: <About />,
           path: '/about',
+        },
+        {
+          element: <AboutSite />,
+          path: '/about/site',
         },
         {
           element: <Newness />,

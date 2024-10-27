@@ -4,7 +4,7 @@ import { focusVisibleMixin } from '../styles/Mixins';
 import { IntrinsicAttributes } from '../types/polymorphic';
 
 const anchorMixin = css`
-  ${focusVisibleMixin};  
+  ${focusVisibleMixin};
   border-radius: var(--av-border-radius-xs);
   color: var(--av-color-link-fg);
   font-weight: 600;
@@ -38,38 +38,49 @@ const anchorMixin = css`
       color: var(--av-color-link-fg-dimmed-active);
       text-decoration-color: var(--av-color-link-fg-dimmed-active);
     }
+  }
 `;
 
 const anchorPrimaryStyle = css`
   ${anchorMixin};
 `;
 
-/**
- * TODO: add secondary variant
- */
+// TODO: add secondary variant
 const anchorSecondaryStyle = css``;
 
 export function AnchorDivider() {
   return <span css={{ paddingInline: 'var(--av-space-2xs)' }}> | </span>;
 }
 
+// TODO: Create a base component between Anchor and Button
 export const Anchor = forwardRef(function AnchorWithRef(
-  { as: Component = 'a', children, href, target, variant = 'primary', ...props }: AnchorOwnProps,
+  { as: Component = 'a', children, target, variant = 'primary', ...props }: AnchorOwnProps,
   ref: Ref<Element>
 ) {
+  const anchorProps =
+    target === '_blank'
+      ? {
+          rel: 'noreferrer',
+          target,
+        }
+      : {};
+
+  const buttonProps = {
+    type: 'button',
+  };
+
   return (
     <Component
       ref={ref}
       css={variant === 'primary' ? anchorPrimaryStyle : anchorSecondaryStyle}
-      href={href}
-      target={target}
-      {...(target === '_blank' && { rel: 'noreferrer' })}
+      {...(Component === 'a' && anchorProps)}
+      {...(Component === 'button' && buttonProps)}
       {...props}
     >
       {children}
     </Component>
   );
-}) as <E extends ElementType = 'button'>(props: AnchorProps<E>) => React.JSX.Element;
+}) as <E extends ElementType = 'a'>(props: AnchorProps<E>) => React.JSX.Element;
 
 interface AnchorOwnProps<E extends ElementType = ElementType> {
   as?: E;

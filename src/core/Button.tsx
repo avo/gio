@@ -34,11 +34,10 @@ const primaryButtonStyle = css`
   }
 `;
 
-/**
- * TODO: add secondary variant
- */
+// TODO: add secondary variant
 const secondaryButtonStyle = css``;
 
+// TODO: Create a base component between Anchor and Button
 export const Button = forwardRef(function ButtonWithRef(
   { as: Component = 'button', target, variant = 'primary', ...props }: ButtonOwnProps,
   ref: Ref<Element>

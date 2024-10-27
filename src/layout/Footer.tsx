@@ -1,4 +1,6 @@
 import { css } from '@emotion/react';
+import { Link } from 'react-router-dom';
+import { Anchor } from '../core/Anchor';
 import {
   diamondMixin,
   layoutMediaQueryMixin,
@@ -49,8 +51,9 @@ export function Footer() {
     <footer css={footerStyle}>
       <p css={copyrightStyle}>&copy;2024 Anna Vo. All rights reserved.</p>
       <p>
-        Site created with great appreciation to developers who have contributed to: <br />
-        Vite, React, Typescript, Emotion Css, Prettier, Eslint, Yarn, VsCode, Github.
+        <Anchor as={Link} to="/about/site">
+          About how this site was built
+        </Anchor>
       </p>
     </footer>
   );

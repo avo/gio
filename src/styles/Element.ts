@@ -34,6 +34,12 @@ export const elementStyle = css`
     margin-inline: 0;
   }
 
+  h2 {
+    font-size: var(--av-font-step-1);
+    margin-block: var(--av-space-2xs);
+    margin-inline: 0;
+  }
+
   a {
     text-decoration: inherit;
   }
@@ -41,5 +47,9 @@ export const elementStyle = css`
   p {
     margin-block: var(--av-space-xs);
     text-wrap: pretty; /* use in newer browsers to pretty up text wrapping */
+  }
+
+  ul {
+    margin-block-end: 0;
   }
 `;
