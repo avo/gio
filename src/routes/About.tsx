@@ -11,28 +11,29 @@ export function About() {
       <p>Hello and welcome!</p>
 
       <p>
-        I’m a frontend developer from the Midwest, specializing in building user-friendly UI
-        components with a strong emphasis on accessibility, consistency, and usability. Currently,
-        as a principal software engineer on the frontend services team at Acquia, I have
-        consistently driven improvements in the developer experience, established standards and best
-        practices, and mentored and onboarded new team members. My contributions include writing
-        code, end-to-end tests, and documentation. Additionally, I perform code reviews and
-        collaborate across departments to drive consistency, usability, and accessibility across
-        multiple applications.
+        I’m a frontend developer specializing in building user-friendly UI components with a strong
+        emphasis on accessibility, consistency, and usability. Currently, as a principal software
+        engineer on the frontend services team at Acquia, I consistently drive improvements in the
+        developer experience, establish standards and best practices, and onboard and mentor new
+        team members. My contributions include reviewing designs for pattern reuse and technical
+        feasibility, writing code, unit and end-to-end tests, and documentation. Additionally, I
+        perform code reviews and collaborate across departments to drive consistency, usability, and
+        accessibility across multiple applications.
       </p>
 
       <p>
-        With a focus on detail and a certification in UX, I strive to create accessible and
-        inclusive experiences while enhancing the developer experience for any team I join. My
-        journey began as a fullstack developer, but my joy for the frontend led me to specialize.
-        With nearly two decades of development experience, predominantly in an agile CI/CD
-        environment, I have worked with teams creating software as a service (SaaS). This includes
-        working on older monolithic software, newer microservices, mono-repos, and micro-frontends.
+        With a focus on detail and a certification in UX, I create accessible and inclusive
+        experiences while enhancing the developer experience for any team I join. My journey began
+        as a fullstack developer, but my joy for the frontend led me to specialize. With nearly two
+        decades of development experience, predominantly in an agile CI/CD environment, I have
+        worked with teams creating software as a service (SaaS). This includes working on older
+        monolithic software, newer microservices, mono-repos, and micro-frontends.
       </p>
 
       <p>
         My current tech stack includes, but is not limited to, React, Typescript, Jest and
-        Playwright. For more about my work experience, check out my{' '}
+        Playwright with the occasional update to a Java backend for frontend (BFF). For more about
+        my work experience, check out my{' '}
         <Anchor href="https://www.linkedin.com/in/annavo/" target="_blank">
           LinkedIn profile
         </Anchor>{' '}
@@ -74,18 +75,18 @@ export function About() {
           developer experience
         </li>
         <li>
-          Accessibility advocate - experience taking a company with no accessibility to one that
-          includes accessibility in the software project lifecyle
+          Accessibility advocate - experience introducing and implementing a software accessibility
+          practice within the software project lifecyle
         </li>
       </ul>
 
       <h2>Personal</h2>
 
       <p>
-        Outside of work, I enjoy reading, listening to audiobooks, crocheting, sewing, and exploring
+        Outside of work, I enjoy reading, listening to audiobooks, and staying active by running,
+        biking, hiking and other workouts. I also enjoy painting, crocheting, sewing, and exploring
         various arts and crafts. I'm a huge fan of science fiction and fantasy. In my downtime, I
-        enjoy gaming, having spent countless hours in World of Warcraft and Diablo. I also love
-        staying active with running, biking, hiking, and other workouts.
+        enjoy gaming, having spent countless hours in the World of Warcraft and Diablo.
       </p>
 
       <h2>What others say about me</h2>

@@ -29,7 +29,7 @@ const primaryButtonStyle = css`
   :active,
   :visited:active {
     color: var(--av-color-link-fg-active);
-    background-color: var(--av-color-primary-bg);
+    background-color: var(--av-color-primary-bg-active);
     border: 1px solid var(--av-color-primary-border-active);
   }
 `;

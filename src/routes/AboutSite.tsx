@@ -28,6 +28,8 @@ export function AboutSite() {
         using Axe DevTools, VoiceOver, and keyboard.
       </p>
 
+      <p>Stylistically, the background shapes were created using pseudo-elements.</p>
+
       <p>
         Feel free to{' '}
         <Anchor href="https://github.com/avo/gio" target="_blank">

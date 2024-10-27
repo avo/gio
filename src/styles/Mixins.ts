@@ -9,7 +9,8 @@ export const breakpointMaxWidth = {
   xs: '444px',
   sm: '599px',
   md: '767px',
-  lg: '1023px',
+  lg: '929px',
+  xl: '1023px',
 };
 /* eslint-enable sort/object-properties */
 

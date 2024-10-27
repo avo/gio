@@ -65,8 +65,16 @@ const contentWrapperStyle = css`
     width: 93%;
     z-index: -1;
 
+    @media (max-width: ${breakpointMaxWidth.lg}) {
+      top: -100px;
+    }
+
     @media (max-width: ${breakpointMaxWidth.md}) {
       top: -80px;
+    }
+
+    @media (max-width: ${breakpointMaxWidth.sm}) {
+      top: -60px;
     }
   }
 
