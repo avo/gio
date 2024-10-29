@@ -21,11 +21,10 @@ export function AboutSite() {
       </p>
 
       <p>
-        When spinning up this site, I initially started off using CRA but it felt a bit clunky and
-        dependencies were outdated. I switched to Vite and found it a much better experience. I also
-        opted to write my own css with some tools to clamp my typography and space for a more fluid
-        and responsive layout. The site follows accessibility best practices. Testing was performed
-        using Axe DevTools, VoiceOver, and keyboard.
+        I used Vite to spin up the site. I also opted to write my own css with some tools to clamp
+        my typography and space for a more fluid and responsive layout. The site follows
+        accessibility best practices. Testing was performed using Axe DevTools, VoiceOver, and
+        keyboard.
       </p>
 
       <p>Stylistically, the background shapes were created using pseudo-elements.</p>
@@ -35,7 +34,7 @@ export function AboutSite() {
         <Anchor href="https://github.com/avo/gio" target="_blank">
           take a look at my code
         </Anchor>
-        . I opted to leave it public so that it could be used as a sample of my coding practice.
+        . I opted to leave it public so that it could be used as a coding sample.
       </p>
 
       <h2>Tech stack</h2>
@@ -48,19 +47,17 @@ export function AboutSite() {
         <Anchor href="https://www.typescriptlang.org/" target="_blank">
           Typescript
         </Anchor>
-        , and using CSS in JS, which this site uses{' '}
-        <Anchor href="https://emotion.sh/" target="_blank">
-          Emotion
-        </Anchor>{' '}
-        for. I prefer using css variables, though I have worked with Less and Sass in the past. I
-        haven't found a need for adding in Less or Sass anymore with the combination of css
-        variables and CSS in JS. Though if there's a need to create design tokens in various
+        , and using CSS in JS. I prefer using css variables, though I have worked with Less and Sass
+        in the past. I haven't found a need for adding in Less or Sass anymore with the combination
+        of css variables and CSS in JS. Though if there's a need to create design tokens in various
         formats, I recommend using{' '}
         <Anchor href="https://github.com/amzn/style-dictionary" target="_blank">
           Amazon's style dictionary
         </Anchor>
         . I recently created a proof of concept for the design team looking to create a universal
-        design system and thought this worked pretty well for their needs.
+        design system and thought this worked pretty well for their needs. It allows you to output
+        your tokens in multiple formats, such as Less, Sass, or CSS variables from one
+        specification.
       </p>
 
       <h2>Eslint and Prettier</h2>
