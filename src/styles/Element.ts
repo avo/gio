@@ -21,10 +21,10 @@ export const elementStyle = css`
   #root {
     background-image: linear-gradient(
       45deg,
-      var(--av-color-primary),
-      var(--av-color-primary),
-      var(--av-color-primary),
-      var(--av-color-primary-active)
+      var(--av-color-primary-bg),
+      var(--av-color-primary-bg),
+      var(--av-color-primary-bg),
+      var(--av-color-primary-bg-active)
     );
   }
 
