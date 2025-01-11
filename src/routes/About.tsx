@@ -1,12 +1,12 @@
-import { Anchor } from '../core/Anchor';
-import { BlockQuote } from '../core/Blockquote';
-import { heading1, headingEm } from '../styles/typography';
+import { Anchor } from '../core/Anchor'
+import { BlockQuote } from '../core/Blockquote'
+import { heading1Style, headingEmStyle } from '../styles/typography'
 
 export function About() {
   return (
     <>
-      <h1 css={heading1}>
-        Anna Vo<em css={headingEm}>, principal software engineer @ Acquia</em>
+      <h1 css={heading1Style}>
+        Anna Vo<em css={headingEmStyle}>, principal software engineer @ Acquia</em>
       </h1>
       <p>Hello and welcome!</p>
 
@@ -145,5 +145,5 @@ export function About() {
         </p>
       </BlockQuote>
     </>
-  );
+  )
 }

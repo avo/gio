@@ -1,11 +1,11 @@
-import { css } from '@emotion/react';
-import { HTMLAttributes, ReactNode } from 'react';
+import { css } from '@emotion/react'
+import { HTMLAttributes, ReactNode } from 'react'
 import {
   breakpointMaxWidth,
   layoutMediaQueryMixin,
   pentagonMixin,
   pseudoAbsContentMixin,
-} from '../styles/Mixins';
+} from '../styles/Mixins'
 
 const mainStyle = css`
   ${layoutMediaQueryMixin};
@@ -36,7 +36,7 @@ const mainStyle = css`
     opacity: 0.6;
     z-index: var(--av-zindex-sm);
   }
-`;
+`
 
 const contentWrapperStyle = css`
   background: var(--av-color-secondary);
@@ -87,16 +87,16 @@ const contentWrapperStyle = css`
     bottom: -3rem;
     opacity: 0.4;
   }
-`;
+`
 
 export function MainSection({ children, ...props }: MainSectionProps) {
   return (
     <main css={mainStyle} id="main" {...props}>
       <section css={[contentWrapperStyle]}>{children}</section>
     </main>
-  );
+  )
 }
 
 interface MainSectionProps extends HTMLAttributes<HTMLBodyElement> {
-  children: ReactNode;
+  children: ReactNode
 }

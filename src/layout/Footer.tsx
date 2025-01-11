@@ -1,12 +1,12 @@
-import { css } from '@emotion/react';
-import { Link } from 'react-router-dom';
-import { Anchor } from '../core/Anchor';
+import { css } from '@emotion/react'
+import { Link } from 'react-router-dom'
+import { Anchor } from '../core/Anchor'
 import {
   diamondMixin,
   layoutMediaQueryMixin,
   pseudoAbsContentMixin,
   textShadowMixin,
-} from '../styles/Mixins';
+} from '../styles/Mixins'
 
 const footerStyle = css`
   ${layoutMediaQueryMixin};
@@ -40,11 +40,11 @@ const footerStyle = css`
     opacity: 0.4;
     position: absolute;
   }
-`;
+`
 
 const copyrightStyle = css`
   font-size: var(--av-font-step--1);
-`;
+`
 
 export function Footer() {
   return (
@@ -56,5 +56,5 @@ export function Footer() {
         </Anchor>
       </p>
     </footer>
-  );
+  )
 }

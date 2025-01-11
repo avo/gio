@@ -3,21 +3,20 @@ import globals from 'globals';
 import reactHooks, { configs, rules } from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
 import sort from 'eslint-plugin-sort';
-import tseslint from 'typescript-eslint';
 import react from 'eslint-plugin-react';
+import mdx from 'eslint-plugin-mdx';
+import typescript from '@typescript-eslint/eslint-plugin';
+import tsParser from '@typescript-eslint/parser';
+import mdxParser from 'eslint-mdx';
 
-export default tseslint.config(
+export default [
   { ignores: ['dist'] },
   {
-    extends: [
-      js.configs.recommended,
-      ...tseslint.configs.strictTypeChecked,
-      ...tseslint.configs.stylisticTypeChecked,
-    ],
     files: ['**/*.{ts,tsx}'],
     languageOptions: {
       ecmaVersion: 2020,
       globals: globals.browser,
+      parser: tsParser,
       parserOptions: {
         project: ['./tsconfig.node.json', './tsconfig.app.json'],
         tsconfigRootDir: import.meta.dirname,
@@ -25,6 +24,7 @@ export default tseslint.config(
     },
     settings: { react: { version: '18.3' } },
     plugins: {
+      '@typescript-eslint': typescript,
       react,
       'react-hooks': reactHooks,
       'react-refresh': reactRefresh,
@@ -42,5 +42,19 @@ export default tseslint.config(
       'sort/string-enums': ['error'],
       'sort/string-unions': ['error'],
     },
-  }
-);
+  },
+  {
+    files: ['**/*.mdx'],
+    plugins: {
+      mdx,
+    },
+    languageOptions: {
+      parser: mdxParser,
+    },
+    rules: {
+      ...mdx.configs.recommended.rules,
+      'import/no-unresolved': 'off',
+      'import/extensions': 'off',
+    },
+  },
+];

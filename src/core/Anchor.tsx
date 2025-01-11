@@ -1,7 +1,7 @@
-import { css } from '@emotion/react';
-import React, { ElementType, forwardRef, ReactNode, Ref } from 'react';
-import { focusVisibleMixin } from '../styles/Mixins';
-import { IntrinsicAttributes } from '../types/polymorphic';
+import { css } from '@emotion/react'
+import React, { ElementType, forwardRef, ReactNode, Ref } from 'react'
+import { focusVisibleMixin } from '../styles/Mixins'
+import { IntrinsicAttributes } from '../types/polymorphic'
 
 const anchorMixin = css`
   ${focusVisibleMixin};
@@ -39,17 +39,17 @@ const anchorMixin = css`
       text-decoration-color: var(--av-color-link-fg-dimmed-active);
     }
   }
-`;
+`
 
 const anchorPrimaryStyle = css`
   ${anchorMixin};
-`;
+`
 
 // TODO: add secondary variant
-const anchorSecondaryStyle = css``;
+const anchorSecondaryStyle = css``
 
 export function AnchorDivider() {
-  return <span css={{ paddingInline: 'var(--av-space-2xs)' }}> | </span>;
+  return <span css={{ paddingInline: 'var(--av-space-2xs)' }}> | </span>
 }
 
 // TODO: Create a base component between Anchor and Button
@@ -63,11 +63,11 @@ export const Anchor = forwardRef(function AnchorWithRef(
           rel: 'noreferrer',
           target,
         }
-      : {};
+      : {}
 
   const buttonProps = {
     type: 'button',
-  };
+  }
 
   return (
     <Component
@@ -79,16 +79,16 @@ export const Anchor = forwardRef(function AnchorWithRef(
     >
       {children}
     </Component>
-  );
-}) as <E extends ElementType = 'a'>(props: AnchorProps<E>) => React.JSX.Element;
+  )
+}) as <E extends ElementType = 'a'>(props: AnchorProps<E>) => React.JSX.Element
 
-interface AnchorOwnProps<E extends ElementType = ElementType> {
-  as?: E;
-  children: ReactNode;
-  href?: string;
-  target?: '_blank';
-  variant?: 'primary' | 'secondary';
+export interface AnchorOwnProps<E extends ElementType = ElementType> {
+  as?: E
+  children: ReactNode
+  href?: string
+  target?: '_blank' | '_self'
+  variant?: 'primary' | 'secondary'
 }
 
-type AnchorProps<E extends ElementType> = AnchorOwnProps<E> &
-  Omit<IntrinsicAttributes<E>, keyof AnchorOwnProps>;
+export type AnchorProps<E extends ElementType> = AnchorOwnProps<E> &
+  Omit<IntrinsicAttributes<E>, keyof AnchorOwnProps>

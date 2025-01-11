@@ -1,4 +1,4 @@
-import { css } from '@emotion/react';
+import { css } from '@emotion/react'
 
 export const baseStyle = css`
   :root {
@@ -38,6 +38,7 @@ export const baseStyle = css`
     --av-space-2xs-xl: clamp(0.4375rem, 0.2917rem + 2vw, 3.75rem); /* 56px → 108px */
 
     /* BORDER */
+    --av-border-radius-xxs: 1px;
     --av-border-radius-xs: 2px;
     --av-border-radius-sm: 4px;
     --av-border-radius-md: 6px;
@@ -58,4 +59,4 @@ export const baseStyle = css`
     --av-zindex-md: 200;
     --av-zindex-sm: 100;
   }
-`;
+`

@@ -1,6 +1,6 @@
-import { css } from '@emotion/react';
-import { HTMLAttributes } from 'react';
-import { breakpointMaxWidth } from '../styles/Mixins';
+import { css } from '@emotion/react'
+import { HTMLAttributes } from 'react'
+import { breakpointMaxWidth } from '../styles/Mixins'
 
 const quoteStyleMixin = css`
   font-family: cursive, serif, sans-serif;
@@ -9,7 +9,7 @@ const quoteStyleMixin = css`
   line-height: 0.1em;
   opacity: 0.6;
   position: absolute;
-`;
+`
 
 const blockquoteStyle = css`
   background: var(--av-color-tertiary-bg);
@@ -36,7 +36,7 @@ const blockquoteStyle = css`
     margin-inline: 0;
     padding-inline: var(--av-space-s-l) var(--av-space-lg);
   }
-`;
+`
 
 const quoteWrapperStyle = css`
   border-left: 6px double var(--av-color-tertiary-border);
@@ -51,13 +51,13 @@ const quoteWrapperStyle = css`
     border: 0;
     padding-inline: var(--av-space-3xs);
   }
-`;
+`
 
 const citeStyle = css`
   display: block;
   text-align: right;
   margin-block-start: var(--av-space-lg);
-`;
+`
 
 export function BlockQuote({ children, cite }: BlockQuoteProps) {
   return (
@@ -65,9 +65,9 @@ export function BlockQuote({ children, cite }: BlockQuoteProps) {
       <div css={quoteWrapperStyle}>{children}</div>
       <cite css={citeStyle}>&mdash; {cite}</cite>
     </blockquote>
-  );
+  )
 }
 
 interface BlockQuoteProps extends HTMLAttributes<HTMLQuoteElement> {
-  cite: string;
+  cite: string
 }

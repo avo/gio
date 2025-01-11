@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
-import { Anchor } from '../core/Anchor';
+import { Link } from 'react-router-dom'
+import { Anchor } from '../core/Anchor'
 
 export function Unknown() {
   return (
@@ -13,5 +13,5 @@ export function Unknown() {
         to start over. Thanks for understanding that the site is a work in progress.
       </p>
     </>
-  );
+  )
 }

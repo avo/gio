@@ -1,4 +1,5 @@
-import { css } from '@emotion/react';
+import { css } from '@emotion/react'
+import { heading1Style, heading2Style, heading3Style } from './typography'
 
 export const elementStyle = css`
   html,
@@ -29,15 +30,15 @@ export const elementStyle = css`
   }
 
   h1 {
-    font-size: var(--av-font-step-3);
-    margin-block: var(--av-space-xs);
-    margin-inline: 0;
+    ${heading1Style}
   }
 
   h2 {
-    font-size: var(--av-font-step-1);
-    margin-block: var(--av-space-2xs);
-    margin-inline: 0;
+    ${heading2Style}
+  }
+
+  h3 {
+    ${heading3Style}
   }
 
   a {
@@ -50,6 +51,12 @@ export const elementStyle = css`
   }
 
   ul {
-    margin-block-end: 0;
+    margin-block-start: 0.25rem;
+    margin-block-end: 1rem;
+    padding-inline-start: 1.5rem;
   }
-`;
+
+  ul ul {
+    margin-block: 0;
+  }
+`

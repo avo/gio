@@ -1,0 +1,118 @@
+import { MdxWrapper } from '../../../layout/MdxWrapper'
+
+export const meta = {
+  title: 'Collaborative Design Feedback: A Guide for Developers and Designers',
+  dateCreated: '2025-01-05',
+  dateUpdated: '2025-01-05',
+  description:
+    'Feedback can be hard. Giving useful feedback harder. Here are some things to keep in mind when providing feedback on designs.',
+  tags: ['collaboration', 'cross-functional', 'design'],
+}
+
+export default ({ children }) => (
+  <MdxWrapper meta={meta} type="articles">
+    {children}
+  </MdxWrapper>
+)
+
+Effective design feedback is a cornerstone of successful product development. While receiving feedback can be challenging, providing constructive feedback that builds trust and drives positive outcomes is a skill that can be developed through practice and mindful communication. By focusing on shared goals and maintaining a constructive dialog, teams can create better products and deliver value more quickly to their users.
+
+## Balance user experience and technical constraints
+
+When reviewing designs, consider both the optimal user experience and technical realities. Solutions should prioritize user needs while accounting for:
+
+- Project timelines and resource constraints
+- Technical feasibility and maintenance requirements
+- Impact on other teams and systems
+- Overall product health and scalability
+
+## Foster collaborative partnerships
+
+Developers and designers should work together from the early stages of product development. This partnership enables:
+
+- Early identification of technical constraints
+- More efficient solution exploration
+- Consistent user experience across the product
+- Balanced consideration of immediate needs and long-term maintenance
+
+## Establish clear alignment
+
+Be sure expectations, process, and timelines are clear before diving into detailed feedback. Some teams may have stages in divergent and convergent thinking. Be aware that some of these questions and thought processes may be more relevant at different times in the process. Be sure there is a shared understanding of:
+
+- Project expectations and timelines
+- Design and development process stages
+- Required stakeholder involvement
+- Available documentation and research
+- Cross-team dependencies and impacts
+
+## Focus on functionality and user goals
+
+Center discussions around user needs and practical outcomes.
+
+- Clearly define the problem being solved
+- Reference available user research and data
+- Evaluate how the proposed solution addresses user needs
+- Consider existing solutions and their effectiveness
+- Plan for retiring outdated features when replacing functionality
+
+## Maintain design and workflow consistency
+
+Evaluate how designs fit within the broader product ecosystem.
+
+- Consistency with existing components and workflows
+- Appropriate use of design tokens and themes
+- Clear and consistent copy, including proper terminology
+  - Are there any additional `aria-labels` needed?
+- Accessibility considerations
+- Integration with existing patterns and workflows
+
+## Ask about behaviors, states, transitions and interactions.
+
+Most design systems should have much of this defined, but a quick mental run-through may be useful, especially around accessibility acceptance criteria, along with tone and voice.
+
+- Application behaviors (empty, loading, error, one item, too many items, etc.)
+- Element states (default, hover, focus, disabled, etc.)
+- Transitions and animations
+- Responsive behavior
+- Adaptive approaches
+- Interactions
+  - Is the header sticky whens scrolling?
+- Accessibility requirements
+- Content tone and voice
+
+## Provide specific, constructive feedback
+
+- Be explicit about what works well and why. This can help save on time spent iterating and in determining where changes are not needed.
+- Frame concerns in terms of user impact, discoverability, accessibility, etc.
+- Offer concrete examples and alternatives
+- Focus on object criteria rather than personal preferences
+- Reference specific guidelines or requirements
+
+Some example questions:
+
+- Should the size of the buttons or the space between the buttons be increased to allow users to more easily click or tap? (ux)
+- The text color doesn’t appear to meet our style guidelines for contrast ratio. Could we double check the color? (accessibility)
+- These buttons do similar things, I wonder if they should be grouped together? (proximity/hierarchy)
+
+Some things to think about:
+
+- Where do your eyes go to first?
+  - Is this what we want the user to focus on first?
+- Will this help the user accomplish the underlying task?
+- If there is confusion on something, determine why and ask. This may highlight additional needs for interaction cues.
+
+## Maintain open communication
+
+Keep the feedback loop active throughout the development process.
+
+- Sharing work in progress on larger initiatives helps to ensure alignment. This is especially useful for more complex interactions.
+- Discuss any deviations from standard patterns.
+- Document important decisions and their rationale from any follow-up communication
+
+## Best practices for feedback delivery
+
+- Lead with positivity. Acknowledge effective aspects of the design. Having a design as a starting point for discussion is already half way there. Design and development are iterative processes. There will always be unknowns, especially as we start on implementation.
+- Stay curious. Ask questions to understand design decisions and explore alternatives together. Describe some of the problems you see instead of focusing on solutions. Ask why and be open-minded.
+- Focus on objectives. Frame feedback around user needs and project goals rather than personal preferences.
+- Be specific. Provide concrete examples and clear reasoning for suggested changes.
+- Show appreciation. Recognize the effort and thought that goes into creating designs and implementing solutions. Be thankful.

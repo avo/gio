@@ -1,9 +1,9 @@
-import { css } from '@emotion/react';
-import { SkipLink } from '../core/SkipLink';
-import { diamondMixin, pseudoAbsContentMixin } from '../styles/Mixins';
-import { Footer } from './Footer';
-import { Header } from './Header';
-import { MainSection } from './MainSection';
+import { css } from '@emotion/react'
+import { SkipLink } from '../core/SkipLink'
+import { diamondMixin, pseudoAbsContentMixin } from '../styles/Mixins'
+import { Footer } from './Footer'
+import { Header } from './Header'
+import { MainSection } from './MainSection'
 
 const layoutStyle = css`
   display: flex;
@@ -28,7 +28,7 @@ const layoutStyle = css`
     top: 145px;
     opacity: 0.9;
   }
-`;
+`
 
 export function PageWrapper({ children }: PageWrapperProps) {
   return (
@@ -38,9 +38,9 @@ export function PageWrapper({ children }: PageWrapperProps) {
       <MainSection>{children}</MainSection>
       <Footer />
     </div>
-  );
+  )
 }
 
 interface PageWrapperProps {
-  children: React.ReactNode;
+  children: React.ReactNode
 }

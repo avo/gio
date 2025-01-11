@@ -1,13 +1,13 @@
-import { css } from '@emotion/react';
-import { Link } from 'react-router-dom';
-import { Anchor, AnchorDivider } from '../core/Anchor';
-import { Button } from '../core/Button';
+import { css } from '@emotion/react'
+import { Link } from 'react-router-dom'
+import { Anchor, AnchorDivider } from '../core/Anchor'
+import { Button } from '../core/Button'
 import {
   breakpointMaxWidth,
   layoutMediaQueryMixin,
   pentagonMixin,
   pseudoAbsContentMixin,
-} from '../styles/Mixins';
+} from '../styles/Mixins'
 
 const headerStyle = css`
   padding-block-start: var(--av-space-sm);
@@ -27,13 +27,13 @@ const headerStyle = css`
       opacity: 0;
     }
   }
-`;
+`
 
 const secondaryNavStyle = css`
   display: flex;
   font-size: var(--av-font-step--1);
   justify-content: flex-end;
-`;
+`
 
 const primaryNavStyle = css`
   ${layoutMediaQueryMixin};
@@ -47,7 +47,7 @@ const primaryNavStyle = css`
     margin-block-start: var(--av-space-2xs);
     margin-inline-end: var(--av-space-sm);
   }
-`;
+`
 
 export function Header() {
   return (
@@ -69,10 +69,13 @@ export function Header() {
         <Button as={Link} to="/">
           Home
         </Button>
+        <Button as={Link} to="/articles">
+          Articles
+        </Button>
         <Button as={Link} to="/blog">
           Blog
         </Button>
       </nav>
     </header>
-  );
+  )
 }

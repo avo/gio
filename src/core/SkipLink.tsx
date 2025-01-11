@@ -1,6 +1,6 @@
-import { css } from '@emotion/react';
-import { outlinePrimaryMixin } from '../styles/Mixins';
-import { Anchor } from './Anchor';
+import { css } from '@emotion/react'
+import { outlinePrimaryMixin } from '../styles/Mixins'
+import { Anchor } from './Anchor'
 
 const skipLinkStyle = css`
   ${outlinePrimaryMixin};
@@ -27,12 +27,12 @@ const skipLinkStyle = css`
       outline: none;
     }
   }
-`;
+`
 
 export function SkipLink() {
   return (
     <div css={skipLinkStyle}>
       <Anchor href="#main">Skip to content</Anchor>
     </div>
-  );
+  )
 }

@@ -1,14 +1,16 @@
-import { Global } from '@emotion/react';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { About } from './routes/About';
-import { AboutSite } from './routes/AboutSite';
-import { Error } from './routes/Error';
-import { Newness } from './routes/New';
-import { Root } from './routes/Root';
-import { Unknown } from './routes/Unknown';
-import { baseStyle } from './styles/Base';
-import { elementStyle } from './styles/Element';
-import { themeStyle } from './styles/Theme';
+import { Global } from '@emotion/react'
+import { Suspense } from 'react'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { About } from './routes/About'
+import { AboutSite } from './routes/AboutSite'
+import { articleRoutes } from './routes/Articles'
+import { Error } from './routes/Error'
+import { Root } from './routes/Root'
+import { Unknown } from './routes/Unknown'
+import { baseStyle } from './styles/Base'
+import { elementStyle } from './styles/Element'
+import { themeStyle } from './styles/Theme'
+import { blogRoutes } from './routes/Blog'
 
 const router = createBrowserRouter([
   {
@@ -26,9 +28,14 @@ const router = createBrowserRouter([
         path: '/about/site',
       },
       {
-        element: <Newness />,
+        children: blogRoutes,
         path: '/blog',
       },
+      {
+        children: articleRoutes,
+        path: '/articles',
+      },
+
       {
         element: <Error />,
         path: '/error',
@@ -42,15 +49,17 @@ const router = createBrowserRouter([
     errorElement: <Error />,
     path: '/',
   },
-]);
+])
 
 function App() {
   return (
     <>
       <Global styles={[baseStyle, themeStyle, elementStyle]} />
-      <RouterProvider router={router} />
+      <Suspense fallback={<div>Loading...</div>}>
+        <RouterProvider router={router} />
+      </Suspense>
     </>
-  );
+  )
 }
 
-export default App;
+export default App

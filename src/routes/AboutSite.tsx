@@ -1,4 +1,4 @@
-import { Anchor } from '../core/Anchor';
+import { Anchor } from '../core/Anchor'
 
 export function AboutSite() {
   return (
@@ -75,5 +75,5 @@ export function AboutSite() {
         VsCode for most everything else.
       </p>
     </>
-  );
+  )
 }

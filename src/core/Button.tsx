@@ -1,7 +1,7 @@
-import { css } from '@emotion/react';
-import React, { ElementType, forwardRef, Ref } from 'react';
-import { focusVisibleMixin } from '../styles/Mixins';
-import { IntrinsicAttributes } from '../types/polymorphic';
+import { css } from '@emotion/react'
+import React, { ElementType, forwardRef, Ref } from 'react'
+import { focusVisibleMixin } from '../styles/Mixins'
+import { IntrinsicAttributes } from '../types/polymorphic'
 
 const primaryButtonStyle = css`
   ${focusVisibleMixin};
@@ -32,10 +32,10 @@ const primaryButtonStyle = css`
     background-color: var(--av-color-primary-bg-active);
     border: 1px solid var(--av-color-primary-border-active);
   }
-`;
+`
 
 // TODO: add secondary variant
-const secondaryButtonStyle = css``;
+const secondaryButtonStyle = css``
 
 // TODO: Create a base component between Anchor and Button
 export const Button = forwardRef(function ButtonWithRef(
@@ -48,11 +48,11 @@ export const Button = forwardRef(function ButtonWithRef(
           rel: 'noreferrer',
           target,
         }
-      : {};
+      : {}
 
   const buttonProps = {
     type: 'button',
-  };
+  }
 
   return (
     <Component
@@ -62,14 +62,14 @@ export const Button = forwardRef(function ButtonWithRef(
       {...(Component === 'button' && buttonProps)}
       {...props}
     />
-  );
-}) as <E extends ElementType = 'button'>(props: ButtonProps<E>) => React.JSX.Element;
+  )
+}) as <E extends ElementType = 'button'>(props: ButtonProps<E>) => React.JSX.Element
 
 export interface ButtonOwnProps<E extends ElementType = ElementType> {
-  as?: E;
-  target?: '_blank';
-  variant?: 'primary' | 'secondary';
+  as?: E
+  target?: '_blank'
+  variant?: 'primary' | 'secondary'
 }
 
 type ButtonProps<E extends ElementType> = ButtonOwnProps<E> &
-  Omit<IntrinsicAttributes<E>, keyof ButtonOwnProps>;
+  Omit<IntrinsicAttributes<E>, keyof ButtonOwnProps>

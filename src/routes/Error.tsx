@@ -1,9 +1,9 @@
-import { Link, useRouteError } from 'react-router-dom';
-import { Anchor } from '../core/Anchor';
+import { Link, useRouteError } from 'react-router-dom'
+import { Anchor } from '../core/Anchor'
 
 export function Error() {
-  const error = useRouteError();
-  console.error(error);
+  const error = useRouteError()
+  console.error(error)
 
   return (
     <>
@@ -16,5 +16,5 @@ export function Error() {
         to start over. Thanks for understanding that the site is a work in progress.
       </p>
     </>
-  );
+  )
 }

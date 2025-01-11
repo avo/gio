@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
-import { Anchor } from '../core/Anchor';
+import { Link } from 'react-router-dom'
+import { Anchor } from '../core/Anchor'
 
 export function Newness() {
   return (
@@ -14,5 +14,5 @@ export function Newness() {
         .
       </p>
     </>
-  );
+  )
 }
