@@ -49,10 +49,10 @@ const copyrightStyle = css`
 export function Footer() {
   return (
     <footer css={footerStyle}>
-      <p css={copyrightStyle}>&copy;2024 Anna Vo. All rights reserved.</p>
+      <p css={copyrightStyle}>&copy;{new Date().getFullYear()} Anna Vo. All rights reserved.</p>
       <p>
         <Anchor as={Link} to="/about/site">
-          About how this site was built
+          How this site was built
         </Anchor>
       </p>
     </footer>
