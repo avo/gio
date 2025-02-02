@@ -25,7 +25,7 @@ export default function Demo() {
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve(data)
-      }, 500)
+      }, 250)
     })
   }
 
@@ -38,10 +38,10 @@ export default function Demo() {
     <PlaygroundWrapper title="Carousel Example">
       <div css={demoWrapperStyle}>
         <ComboField
-          // asyncSearch={handleSearch}
+          asyncSearch={handleSearch}
           label="Test label"
           onSelect={onSelect}
-          options={options}
+          // options={options}
           value={selectedValue}
         />
       </div>
