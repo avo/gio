@@ -1,13 +1,13 @@
-import js from '@eslint/js';
-import globals from 'globals';
-import reactHooks, { configs, rules } from 'eslint-plugin-react-hooks';
-import reactRefresh from 'eslint-plugin-react-refresh';
-import sort from 'eslint-plugin-sort';
-import react from 'eslint-plugin-react';
-import mdx from 'eslint-plugin-mdx';
-import typescript from '@typescript-eslint/eslint-plugin';
-import tsParser from '@typescript-eslint/parser';
-import mdxParser from 'eslint-mdx';
+import js from '@eslint/js'
+import globals from 'globals'
+import reactHooks, { configs, rules } from 'eslint-plugin-react-hooks'
+import reactRefresh from 'eslint-plugin-react-refresh'
+import sort from 'eslint-plugin-sort'
+import react from 'eslint-plugin-react'
+import mdx from 'eslint-plugin-mdx'
+import typescript from '@typescript-eslint/eslint-plugin'
+import tsParser from '@typescript-eslint/parser'
+import mdxParser from 'eslint-mdx'
 
 export default [
   { ignores: ['dist'] },
@@ -35,9 +35,11 @@ export default [
       ...react.configs['jsx-runtime'].rules,
       ...reactHooks.configs.recommended.rules,
       ...sort.configs.recommended.rules,
+      'react/jsx-sort-props': ['error', { reservedFirst: true }] /* sort props alpha */,
       'react/no-unknown-property': ['error', { ignore: ['css'] }] /* fix emotion css */,
       'react/no-unescaped-entities': 'off' /* temp - make text with ' &apos; readable */,
       'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
+      'react/jsx-max-props-per-line': [1, { when: 'multiline' }] /* max props per line */,
       'sort/type-properties': ['error'],
       'sort/string-enums': ['error'],
       'sort/string-unions': ['error'],
@@ -57,4 +59,4 @@ export default [
       'import/extensions': 'off',
     },
   },
-];
+]

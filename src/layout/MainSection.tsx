@@ -39,7 +39,7 @@ const mainStyle = css`
 `
 
 const contentWrapperStyle = css`
-  background: var(--av-color-secondary);
+  background: var(--av-color-secondary-bg);
   border-radius: var(--av-border-radius-xl);
   display: flex;
   flex-direction: column;

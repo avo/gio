@@ -1,13 +1,25 @@
 import { Outlet, ScrollRestoration } from 'react-router-dom'
 import { PageWrapper } from '../layout/PageWrapper'
 
-export function Root() {
+export function Root({ pageWrapper = true }: RootProps) {
   return (
     <>
       <ScrollRestoration />
-      <PageWrapper>
+      {pageWrapper ? (
+        <PageWrapper>
+          <Outlet />
+        </PageWrapper>
+      ) : (
         <Outlet />
-      </PageWrapper>
+      )}
     </>
   )
+}
+
+interface RootProps {
+  /**
+   * Whether to wrap the outlet in a page layout wrapper.
+   * @default true
+   */
+  pageWrapper?: boolean
 }

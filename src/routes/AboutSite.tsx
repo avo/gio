@@ -4,10 +4,12 @@ export function AboutSite() {
   return (
     <>
       <h1>About this site</h1>
+
       <h2>Technology stack</h2>
       <p>
-        Built with React, TypeScript, and CSS-in-JS, leveraging Vite as the build tool. The site
-        prioritizes accessibility and responsive design through:
+        Built with React, TypeScript, and CSS-in-JS, leveraging Vite as the build tool. There's also
+        some MDX sprinkled in since writing with Markdown is a tad bit easier. The site prioritizes
+        accessibility and responsive design through:
       </p>
       <ul>
         <li>Fluid typography and spacing using CSS clamp</li>
@@ -15,12 +17,19 @@ export function AboutSite() {
         <li>Semantic HTML and ARIA-compliant markup</li>
         <li>Accessibility testing via Axe DevTools, VoiceOver, and keyboard navigation</li>
       </ul>
+
       <h2>Css and styling</h2>
       <p>
         This site uses pseudo-elements for decorative background shapes and uses a color palette
         that I put together that resonated with me. I would like to come back through and re-work
         some of the responsive elements and add additional imagery and animation, but I focused
         first on the structure of the site. Iterations to come.
+      </p>
+
+      <h2>Testing</h2>
+      <p>
+        I actually rather like writing tests. However, I haven't had a moment to set things up here
+        yet.
       </p>
 
       <h2>Development practices and philosophy</h2>
@@ -64,15 +73,15 @@ export function AboutSite() {
         constructive discussions. These reviews ensure consistent standards while fostering
         knowledge sharing and skill development across the team. Regular, thoughtful code reviews
         help maintain technical excellence while building a culture of continuous improvement and
-        mentorship. That being said, I didn't have anyone review my code before merging, so there
-        are likely improvements that can be made
+        mentorship. That being said, I didn't have anyone review my code before merging for this
+        project, so there are likely improvements that can be made.
       </p>
       <p>
         Feel free to{' '}
         <Anchor href="https://github.com/avo/gio" target="_blank">
           take a look at my code
         </Anchor>
-        and share your thoughts.
+        and share your thoughts. I'm always open to improving and learning.
       </p>
 
       <h2>Gratitude</h2>

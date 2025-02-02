@@ -1,6 +1,5 @@
 import { css } from '@emotion/react'
 import { Link } from 'react-router-dom'
-import { Anchor, AnchorDivider } from '../core/Anchor'
 import { Button } from '../core/Button'
 import {
   breakpointMaxWidth,
@@ -8,6 +7,7 @@ import {
   pentagonMixin,
   pseudoAbsContentMixin,
 } from '../styles/Mixins'
+import { NavSecondaryLinks } from './NavSecondaryLinks'
 
 const headerStyle = css`
   padding-block-start: var(--av-space-sm);
@@ -29,12 +29,6 @@ const headerStyle = css`
   }
 `
 
-const secondaryNavStyle = css`
-  display: flex;
-  font-size: var(--av-font-step--1);
-  justify-content: flex-end;
-`
-
 const primaryNavStyle = css`
   ${layoutMediaQueryMixin};
   padding-block: var(--av-space-2xs);
@@ -52,19 +46,7 @@ const primaryNavStyle = css`
 export function Header() {
   return (
     <header css={headerStyle}>
-      <nav aria-label="Secondary external links" css={secondaryNavStyle}>
-        <Anchor
-          aria-label="View my LinkedIn profile"
-          href="https://www.linkedin.com/in/annavo/"
-          target="_blank"
-        >
-          LinkedIn
-        </Anchor>
-        <AnchorDivider />
-        <Anchor aria-label="View my Github pages" href="https://github.com/avo" target="_blank">
-          Github
-        </Anchor>
-      </nav>
+      <NavSecondaryLinks />
       <nav aria-label="Primary" css={primaryNavStyle}>
         <Button as={Link} to="/">
           Home

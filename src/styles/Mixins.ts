@@ -1,4 +1,4 @@
-import { css } from '@emotion/react';
+import { css } from '@emotion/react'
 
 /**
  * Breakpoints for desktop first design, which is the intended target audience.
@@ -11,15 +11,15 @@ export const breakpointMaxWidth = {
   md: '767px',
   lg: '929px',
   xl: '1023px',
-};
+}
 /* eslint-enable sort/object-properties */
 
 /**
  * Use to add primary outline to elements, especially with tab focus.
  */
 export const outlinePrimaryMixin = css`
-  outline: max(1px, 0.1em) solid var(--av-color-primary-focus-outline);
-`;
+  outline: max(1px, 0.1em) solid var(--av-color-focus-outline);
+`
 
 /**
  * Use to add primary outline to elements, especially with tab focus.
@@ -27,7 +27,7 @@ export const outlinePrimaryMixin = css`
 export const outlinePrimaryOffsetMixin = css`
   ${outlinePrimaryMixin};
   outline-offset: 0.25em;
-`;
+`
 
 /**
  * Use to add focus outline when tabbing on keyboard.
@@ -36,7 +36,7 @@ export const focusVisibleMixin = css`
   :focus-visible {
     ${outlinePrimaryOffsetMixin};
   }
-`;
+`
 
 /**
  * For use with pseudo-elements.
@@ -45,7 +45,7 @@ export const focusVisibleMixin = css`
 export const pseudoAbsContentMixin = css`
   content: '';
   position: absolute;
-`;
+`
 
 /**
  * Use to create a diamond shape.
@@ -54,13 +54,13 @@ export const pseudoAbsContentMixin = css`
  * @returns
  */
 export const diamondMixin = (size = 150, rotation = 45) => css`
-  background-color: var(--av-color-secondary);
+  background-color: var(--av-color-secondary-bg);
   border: 1px solid var(--av-color-secondary-border);
   border-radius: var(--av-border-radius-sm);
   height: ${size}px;
   transform: rotate(${rotation}deg);
   width: ${size}px;
-`;
+`
 
 /**
  * Use to create a pentagon shape.
@@ -74,7 +74,7 @@ export const pentagonMixin = (size = 100, rotation = 30) => css`
   height: ${size}px;
   transform: rotate(${rotation}deg);
   width: ${size}px;
-`;
+`
 
 /**
  * Use to change the inline padding for the main
@@ -84,23 +84,23 @@ export const layoutMediaQueryMixin = css`
   @media (max-width: ${breakpointMaxWidth.md}) {
     padding-inline: var(--av-space-2xs-xl) 0;
   }
-`;
+`
 
 /**
  * Add a touch of text shadow to increase readability when text overlays shape
  */
 export const textShadowMixin = css`
   text-shadow: 0.1em 0.1em 0.2em var(--av-color-primary-bg);
-`;
+`
 
 /**
  * Use to hide things off screen for screen reader only.
  */
 export const srOnlyMixin = css`
-  position: absolute;
+  height: 1px;
   left: -10000px;
+  overflow: hidden;
+  position: absolute;
   top: auto;
   width: 1px;
-  height: 1px;
-  overflow: hidden;
-`;
+`

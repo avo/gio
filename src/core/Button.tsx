@@ -1,4 +1,5 @@
 import { css } from '@emotion/react'
+import styled from '@emotion/styled'
 import React, { ElementType, forwardRef, Ref } from 'react'
 import { focusVisibleMixin } from '../styles/Mixins'
 import { IntrinsicAttributes } from '../types/polymorphic'
@@ -36,6 +37,11 @@ const primaryButtonStyle = css`
 
 // TODO: add secondary variant
 const secondaryButtonStyle = css``
+
+export const ButtonGroup = styled.div`
+  display: flex;
+  gap: 0.5rem;
+`
 
 // TODO: Create a base component between Anchor and Button
 export const Button = forwardRef(function ButtonWithRef(

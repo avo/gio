@@ -1,4 +1,4 @@
-import { css } from '@emotion/react';
+import { css } from '@emotion/react'
 
 export const themeStyle = css`
   :root {
@@ -38,6 +38,7 @@ export const themeStyle = css`
 
     /** Layout Colors **/
     --av-color-fg: var(--av-color-white);
+    --av-color-fg-inverse: var(--av-color-brand-100);
 
     --av-color-primary-bg: var(--av-color-brand-100);
     --av-color-primary-bg-hover: var(--av-color-brand-200);
@@ -48,7 +49,7 @@ export const themeStyle = css`
     --av-color-primary-border-hover: var(--av-color-green-100);
     --av-color-primary-border-active: var(--av-color-yellow-100);
 
-    --av-color-secondary: var(--av-color-brand-400);
+    --av-color-secondary-bg: var(--av-color-brand-400);
     --av-color-secondary-border: var(--av-color-green-200);
 
     --av-color-tertiary-bg: var(--av-color-purple-100);
@@ -65,5 +66,7 @@ export const themeStyle = css`
     --av-color-link-fg-dimmed-active: var(--av-color-yellow-100);
 
     --av-color-focus-outline: var(--av-color-purple-200); /* use for focus outline */
+
+    --av-shadow-1: 0 2px 4px var(--av-color-brand-100);
   }
-`;
+`

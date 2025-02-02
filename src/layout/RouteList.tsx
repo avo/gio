@@ -5,8 +5,8 @@ export function RouteList({ routes }: { routes: RoutePath[] }) {
     <ul>
       {routes.map(({ description, path, title }) => {
         return path ? (
-          <li>
-            <Anchor key={path} css={{ marginInlineEnd: '0.5rem' }} href={path}>
+          <li key={path}>
+            <Anchor css={{ marginInlineEnd: '0.5rem' }} href={path}>
               {title}
             </Anchor>
             {description}

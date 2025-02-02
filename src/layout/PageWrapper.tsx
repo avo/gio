@@ -1,4 +1,5 @@
 import { css } from '@emotion/react'
+import { ScrollRestoration } from 'react-router-dom'
 import { SkipLink } from '../core/SkipLink'
 import { diamondMixin, pseudoAbsContentMixin } from '../styles/Mixins'
 import { Footer } from './Footer'
@@ -33,6 +34,7 @@ const layoutStyle = css`
 export function PageWrapper({ children }: PageWrapperProps) {
   return (
     <div css={layoutStyle}>
+      <ScrollRestoration />
       <SkipLink />
       <Header />
       <MainSection>{children}</MainSection>

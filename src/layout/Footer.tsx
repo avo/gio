@@ -5,6 +5,7 @@ import {
   diamondMixin,
   layoutMediaQueryMixin,
   pseudoAbsContentMixin,
+  srOnlyMixin,
   textShadowMixin,
 } from '../styles/Mixins'
 
@@ -46,15 +47,50 @@ const copyrightStyle = css`
   font-size: var(--av-font-step--1);
 `
 
+const siteMapStyle = css`
+  display: grid;
+  grid-template-columns: auto auto;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  padding-inline-end: 8rem;
+  row-gap: 0.2rem;
+`
+
 export function Footer() {
   return (
     <footer css={footerStyle}>
-      <p css={copyrightStyle}>&copy;{new Date().getFullYear()} Anna Vo. All rights reserved.</p>
-      <p>
-        <Anchor as={Link} to="/about/site">
-          How this site was built
-        </Anchor>
+      <p css={copyrightStyle}>
+        &copy;2024 - {new Date().getFullYear()} Anna Vo. All rights reserved.
       </p>
+      <h2 css={srOnlyMixin}>Site map</h2>
+      <ul css={siteMapStyle}>
+        <li>
+          <Anchor as={Link} to="/">
+            Home
+          </Anchor>
+        </li>
+        <li>
+          <Anchor as={Link} to="/playground">
+            Playground
+          </Anchor>
+        </li>
+        <li>
+          <Anchor as={Link} to="/articles">
+            Articles
+          </Anchor>
+        </li>
+        <li>
+          <Anchor as={Link} to="/about/site">
+            About this site
+          </Anchor>
+        </li>
+        <li>
+          <Anchor as={Link} to="/blog">
+            Blog
+          </Anchor>
+        </li>
+      </ul>
     </footer>
   )
 }
