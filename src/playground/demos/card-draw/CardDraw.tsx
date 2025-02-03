@@ -59,6 +59,23 @@ const cardFaceStyle = css`
   justify-content: center;
 `
 
+const cardSuitMixin = css`
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+`
+const cardSuitStyle = css`
+  ${cardSuitMixin}
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+`
+
+/** Center cards with flex if only one row */
+const cardSuitFlexStyle = css`
+  ${cardSuitMixin}
+  display: flex;
+`
+
 const cardBottomStyle = css`
   align-self: flex-end;
 `
@@ -133,6 +150,13 @@ export function CardDraw() {
       </form>
       <div css={cardsStyle}>
         {cardsToDeal.map((card, index) => {
+          const cardValue = parseInt(card.value)
+          let maxSuits
+          if (card.value === 'A') {
+            maxSuits = 1
+          } else {
+            maxSuits = Number.isInteger(cardValue) ? cardValue : 10
+          }
           return (
             <div
               key={card.value + card.suit}
@@ -144,19 +168,22 @@ export function CardDraw() {
               }}
             >
               <div css={cardTopStyle}>{card.value}</div>
-              <div className={`card-${card.suit}`} css={cardFaceStyle}>
-                {(() => {
-                  switch (card.suit) {
-                    case 'hearts':
-                      return '♥'
-                    case 'diamonds':
-                      return '♦'
-                    case 'clubs':
-                      return '♣'
-                    case 'spades':
-                      return '♠'
-                  }
-                })()}
+              <div css={cardFaceStyle} data-testid={`card-${card.suit}`}>
+                <div css={maxSuits < 4 ? cardSuitFlexStyle : cardSuitStyle}>
+                  {Array.from({
+                    length: maxSuits,
+                  }).map((_, index) => (
+                    <span key={`card-suit-${index}`}>
+                      {card.suit === 'hearts'
+                        ? '♥'
+                        : card.suit === 'diamonds'
+                          ? '♦'
+                          : card.suit === 'clubs'
+                            ? '♣'
+                            : '♠'}
+                    </span>
+                  ))}
+                </div>
               </div>
               <div className="card-bottom" css={cardBottomStyle}>
                 {card.value}
