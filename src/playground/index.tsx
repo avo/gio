@@ -95,7 +95,10 @@ const mainStyle = css`
 `
 
 const listStyle = css`
+  border-bottom: 1px solid var(--av-color-secondary-border);
+  border-top: 1px solid var(--av-color-secondary-border);
   margin-block-start: 1rem;
+  padding-block: 1.5rem 1rem;
 `
 
 export function Playground() {
@@ -119,14 +122,10 @@ export function Playground() {
 
       <main css={mainStyle} id="main">
         <h2 css={heading2Style}>Demos and experiments</h2>
+
         <p>
           These are quick working examples to test concepts and may not be fully tested or
           accessible.
-        </p>
-
-        <p>
-          If scrolling down to demos gets tedious, the skip to content link can be used to quickly
-          jump to main. (Tab + Enter after clicking "Back to Playground")
         </p>
 
         <ul css={listStyle}>
@@ -162,6 +161,18 @@ export function Playground() {
             <p>Create a modal that appears in the center of the screen with a background overlay</p>
           </li>
         </ul>
+        <p>
+          **If scrolling down to demos gets tedious, the skip to content link can be used to quickly
+          jump to main. (Tab + Enter after clicking "Back to Playground")
+        </p>
+        <p>
+          <Anchor
+            href="https://github.com/avo/gio/tree/master/src/playground/demos"
+            target="_blank"
+          >
+            View source code
+          </Anchor>
+        </p>
       </main>
       <Footer />
     </div>
