@@ -131,6 +131,16 @@ export function Playground() {
 
         <ul css={listStyle}>
           <li>
+            <Anchor as={Link} to="/playground/demos/card-draw">
+              Card Draw
+            </Anchor>
+            <p>
+              Example demo that is outside the every day norm of filtering and mapping
+              presentational data, so as not to "draw" a blank at critical times in life. Oddly
+              specific, no?
+            </p>
+          </li>
+          <li>
             <Anchor as={Link} to="/playground/demos/carousel">
               Carousel
             </Anchor>

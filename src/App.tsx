@@ -2,6 +2,7 @@ import { Global } from '@emotion/react'
 import { Suspense } from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { Playground } from './playground'
+import CardDrawDemo from './playground/demos/card-draw'
 import CarouselDemo from './playground/demos/carousel'
 import ComboFieldDemo from './playground/demos/combofield'
 import ModalDemo from './playground/demos/modal'
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
       {
         element: <Playground />,
         index: true,
+      },
+      {
+        element: <CardDrawDemo />,
+        path: '/playground/demos/card-draw',
       },
       {
         element: <CarouselDemo />,
