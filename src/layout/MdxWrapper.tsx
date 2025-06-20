@@ -1,8 +1,9 @@
+import { css } from '@emotion/react'
 import { MDXProvider } from '@mdx-js/react'
 import { ReactNode } from 'react'
 import { Anchor } from '../core/Anchor'
 import { textSmallStyle } from '../styles/typography'
-import { css } from '@emotion/react'
+import { capitalize, joinWithSeparator } from '../utils/string'
 
 const backStyle = css`
   align-self: flex-start;
@@ -27,14 +28,14 @@ export function MdxWrapper({ children, meta, type }: MdxWrapperProps) {
   return (
     <>
       <Anchor css={backStyle} href={`/${type}`}>
-        &larr; Back to {type}
+        &larr; Back to {capitalize(type)}
       </Anchor>
       <h1>{meta.title}</h1>
       <dl css={metaStyle}>
         <dt>Updated:</dt>
         <dd>{meta.dateUpdated}</dd>
         <dt>Tags:</dt>
-        <dd>{meta.tags.join(', ').toString()}</dd>
+        <dd>{joinWithSeparator(meta.tags)}</dd>
       </dl>
 
       <MDXProvider>{children}</MDXProvider>

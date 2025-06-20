@@ -1,16 +1,20 @@
 import js from '@eslint/js'
-import globals from 'globals'
+import typescript from '@typescript-eslint/eslint-plugin'
+import tsParser from '@typescript-eslint/parser'
+import prettier from 'eslint-config-prettier'
+import importPlugin from 'eslint-plugin-import'
+import * as mdx from 'eslint-plugin-mdx'
+import eslintPluginPrettier from 'eslint-plugin-prettier'
+import react from 'eslint-plugin-react'
 import reactHooks, { configs, rules } from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
 import sort from 'eslint-plugin-sort'
-import react from 'eslint-plugin-react'
-import mdx from 'eslint-plugin-mdx'
-import typescript from '@typescript-eslint/eslint-plugin'
-import tsParser from '@typescript-eslint/parser'
-import mdxParser from 'eslint-mdx'
+import globals from 'globals'
 
 export default [
-  { ignores: ['dist'] },
+  sort.configs['flat/recommended'],
+  prettier,
+  { ignores: ['dist', '.yarn'] },
   {
     files: ['**/*.{ts,tsx}'],
     languageOptions: {
@@ -22,9 +26,10 @@ export default [
         tsconfigRootDir: import.meta.dirname,
       },
     },
-    settings: { react: { version: '18.3' } },
     plugins: {
       '@typescript-eslint': typescript,
+      import: importPlugin,
+      prettier: eslintPluginPrettier,
       react,
       'react-hooks': reactHooks,
       'react-refresh': reactRefresh,
@@ -35,28 +40,45 @@ export default [
       ...react.configs['jsx-runtime'].rules,
       ...reactHooks.configs.recommended.rules,
       ...sort.configs.recommended.rules,
-      'react/jsx-sort-props': ['error', { reservedFirst: true }] /* sort props alpha */,
-      'react/no-unknown-property': ['error', { ignore: ['css'] }] /* fix emotion css */,
-      'react/no-unescaped-entities': 'off' /* temp - make text with ' &apos; readable */,
-      'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
+      'import/extensions': [
+        'error',
+        'ignorePackages',
+        {
+          js: 'never',
+          jsx: 'never',
+          ts: 'never',
+          tsx: 'never',
+        },
+      ],
+      'import/no-unresolved': 'error', // Allow omitting extensions for these file types
+      'prettier/prettier': 'error',
       'react/jsx-max-props-per-line': [1, { when: 'multiline' }] /* max props per line */,
-      'sort/type-properties': ['error'],
+      'react/jsx-sort-props': ['error', { reservedFirst: true }] /* sort props alpha */,
+      'react/no-unescaped-entities': 'off' /* temp - make text with ' &apos; readable */,
+      'react/no-unknown-property': ['error', { ignore: ['css'] }] /* fix emotion css */,
+      'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
       'sort/string-enums': ['error'],
       'sort/string-unions': ['error'],
+      'sort/type-properties': ['error'],
+    },
+    settings: {
+      'import/resolver': {
+        node: {
+          extensions: ['.js', '.jsx', '.ts', '.tsx'], // Resolve these extensions
+        },
+      },
+      react: { version: '18.3' },
     },
   },
   {
     files: ['**/*.mdx'],
-    plugins: {
-      mdx,
-    },
-    languageOptions: {
-      parser: mdxParser,
-    },
+    ...mdx.flat,
+    processor: mdx.createRemarkProcessor({ lintCodeBlocks: true }),
+
     rules: {
-      ...mdx.configs.recommended.rules,
-      'import/no-unresolved': 'off',
+      ...mdx.flatCodeBlocks.rules,
       'import/extensions': 'off',
+      'import/no-unresolved': 'off',
     },
   },
 ]

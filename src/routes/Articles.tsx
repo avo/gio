@@ -1,17 +1,21 @@
 import { lazy } from 'react'
-import { meta as designFeedbackMeta } from '../articles/xfn/design-feedback/index.mdx'
+import { meta as designFeedbackMeta } from '../articles/xfn/design-feedback/meta'
 import { MdxComponents } from '../layout/MdxComponents'
 import { RouteList, RoutePath } from '../layout/RouteList'
 
 const DesignFeedback = lazy(() => import('../articles/xfn/design-feedback/index.mdx'))
 
-// eslint-disable-next-line react-refresh/only-export-components
+const fallbackRoute: RoutePath = {
+  element: <Articles />,
+  exact: true,
+  index: true,
+}
+
+const a11yRoutes: RoutePath[] = []
+
+const feRoutes: RoutePath[] = []
+
 const xfnRoutes: RoutePath[] = [
-  {
-    element: <Articles />,
-    exact: true,
-    index: true,
-  },
   {
     dateUpdated: designFeedbackMeta.dateUpdated,
     description: designFeedbackMeta.description,
@@ -22,7 +26,7 @@ const xfnRoutes: RoutePath[] = [
   },
 ]
 
-export const articleRoutes: RoutePath[] = xfnRoutes
+export const articleRoutes: RoutePath[] = [fallbackRoute, ...a11yRoutes, ...feRoutes, ...xfnRoutes]
 
 export function Articles() {
   return (
@@ -33,7 +37,7 @@ export function Articles() {
         relevant.
       </p>
 
-      <RouteList routes={xfnRoutes} />
+      <RouteList routes={articleRoutes} />
     </>
   )
 }

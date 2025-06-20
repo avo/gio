@@ -1,5 +1,5 @@
 import { lazy } from 'react'
-import { meta as starDate20250108 } from '../blog/2025-01-08/index.mdx'
+import { meta as starDate20250108 } from '../blog/2025-01-08/meta'
 import { MdxComponents } from '../layout/MdxComponents'
 import { RouteList, RoutePath } from '../layout/RouteList'
 
