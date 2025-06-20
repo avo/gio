@@ -3070,7 +3070,6 @@ __metadata:
     "@vitejs/plugin-react": "npm:^4.5.2"
     eslint: "npm:^9.29.0"
     eslint-config-prettier: "npm:^9.1.0"
-    eslint-mdx: "npm:^3.5.0"
     eslint-plugin-import: "npm:^2.31.0"
     eslint-plugin-mdx: "npm:^3.5.0"
     eslint-plugin-prettier: "npm:^5.5.0"
