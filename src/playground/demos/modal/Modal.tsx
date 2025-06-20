@@ -33,7 +33,14 @@ const Modal: React.FC<ModalProps> = ({ onClose, show }) => {
         <h2>Modal Title</h2>
         <p>This is a modal window.</p>
         <ButtonGroup>
-          <Button onClick={() => console.log('foo')}>Click me should not bubble</Button>
+          <Button
+            onClick={() => {
+              // eslint-disable-next-line no-console
+              console.log('foo')
+            }}
+          >
+            Click me should not bubble
+          </Button>
           <Button onClick={onClose}>Close</Button>
         </ButtonGroup>
       </div>

@@ -95,12 +95,14 @@ export function ComboField({ asyncSearch, label, onSelect, options }: ComboField
   }
 
   function onInputChange(event: React.ChangeEvent<HTMLInputElement>) {
+    // eslint-disable-next-line no-console
     console.log('input changed: ', event?.target.value)
     setInputValue(event?.target.value)
   }
 
   function handleEscape(event: KeyboardEvent) {
     if (event.key === 'Escape') {
+      // eslint-disable-next-line no-console
       console.log('escape key')
       setOpen(false)
       inputRef.current?.blur()

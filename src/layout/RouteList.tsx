@@ -1,3 +1,4 @@
+import React from 'react'
 import { Anchor } from '../core/Anchor'
 
 export function RouteList({ routes }: { routes: RoutePath[] }) {
@@ -20,7 +21,7 @@ export function RouteList({ routes }: { routes: RoutePath[] }) {
 export interface RoutePath {
   dateUpdated?: string
   description?: string
-  element: JSX.Element
+  element: React.JSX.Element
   exact?: boolean
   index?: boolean
   path?: string
