@@ -64,11 +64,11 @@ export function About() {
       <ul>
         <li>
           User experience certified - General UXC, Interaction Design Specialty #1002598 through
-          Nielsen Norman Group (NN/g){' '}
+          Nielsen Norman Group (NN/g)
         </li>
         <li>
-          Versed in both technology and design - Formally educated in both computer programming and
-          fine arts with an emphasis on graphic design
+          Versed in technology and design - Formally educated in both computer programming and fine
+          arts with an emphasis on graphic design
         </li>
         <li>
           Leadership - 7+ years in tech leadership or senior role and working toward improving the

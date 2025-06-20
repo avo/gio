@@ -1,4 +1,5 @@
 import { css } from '@emotion/react'
+import { HomeIcon } from '@heroicons/react/20/solid'
 import { Link } from 'react-router-dom'
 import { Button } from '../core/Button'
 import {
@@ -49,7 +50,7 @@ export function Header() {
       <NavSecondaryLinks />
       <nav aria-label="Primary" css={primaryNavStyle}>
         <Button as={Link} to="/">
-          Home
+          <HomeIcon style={{ height: '20px', verticalAlign: 'text-bottom', width: '20px' }} />
         </Button>
         <Button as={Link} to="/articles">
           Articles
